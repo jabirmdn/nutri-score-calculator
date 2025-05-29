@@ -1,13 +1,12 @@
 package main
 
-
-type ScoreType int 
+type ScoreType int
 
 const (
-	Food ScoreType iota
-    Beverage 
+	Food ScoreType = iota
+	Beverage
 	Water
-	Cheese	
+	Cheese
 )
 
 type EnergyKG float64
@@ -28,4 +27,15 @@ type NutritionalData struct {
 	Protein             ProteinGram
 	IsWater             bool
 	// isWater bool
+}
+
+type NutritionalScore struct {
+	Value     int
+	Positive  int
+	Negative  int
+	ScoreType ScoreType
+}
+
+func CalculateNutritionalScore(data NutritionalData, scoreType ScoreType) NutritionalScore {
+
 }
